@@ -4,7 +4,10 @@ import { allQuotesQuery} from '@/sanity/lib/queries'
 import {sanityFetch} from '@/sanity/lib/live'
 
 export default async function Page() {
-  const quotes = await sanityFetch({ query: allQuotesQuery });
+
+  const result = await sanityFetch({ query: allQuotesQuery });
+  // Ensure quotes is an array for QuoteRandomizer
+  const quotes = Array.isArray(result) ? result : Array.isArray(result?.data) ? result.data : [];
 
   return (
     <>
