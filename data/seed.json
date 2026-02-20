@@ -1,0 +1,80 @@
+{
+  "messages": [
+    {
+      "text": "Your business best chapter\nhasn't launched yet.",
+      "category": "normal"
+    },
+    {
+      "text": "The data aligns in your favor.\n\nInteresting.",
+      "category": "normal"
+    },
+    {
+      "text": "Today's curiosity becomes\ntomorrow's growth.\n\nDon't look far.",
+      "category": "normal"
+    },
+    {
+      "text": "Your next big decision\nis closer than you think.",
+      "category": "normal"
+    },
+    {
+      "text": "The market sees something\nin you today.\n\nTrust it.",
+      "category": "normal"
+    },
+    {
+      "text": "Growth isn't linear.\nNeither is your success story.",
+      "category": "normal"
+    },
+    {
+      "text": "A partnership that changes\neverything is forming.",
+      "category": "normal"
+    },
+    {
+      "text": "Your competitive edge\nwas never about speed.\n\nIt's about vision.",
+      "category": "normal"
+    },
+    {
+      "text": "Something unexpected\nwill drive your Q3.\n\nEmbrace it.",
+      "category": "unusual"
+    },
+    {
+      "text": "The algorithm favors\nthe bold today.",
+      "category": "unusual"
+    },
+    {
+      "text": "Your office plant knows\nmore about growth\nthan your board does.",
+      "category": "unusual"
+    },
+    {
+      "text": "Mercury is in retrograde.\nBut your pipeline isn't.",
+      "category": "unusual"
+    },
+    {
+      "text": "The stars say: pivot.\nThe data says: scale.\n\nWhy not both?",
+      "category": "unusual"
+    },
+    {
+      "text": "Someone in this room\nwill change your trajectory.",
+      "category": "triggered"
+    },
+    {
+      "text": "The next conversation\nyou have here\nwill matter more than you think.",
+      "category": "triggered"
+    },
+    {
+      "text": "Look to your left.\nYour future collaborator\nmight be standing there.",
+      "category": "triggered"
+    }
+  ],
+  "videos": [
+    {
+      "filename": "transition-01.mp4",
+      "type": "transition",
+      "duration_seconds": 5
+    },
+    {
+      "filename": "idle-showreel.mp4",
+      "type": "idle",
+      "duration_seconds": 120
+    }
+  ]
+}

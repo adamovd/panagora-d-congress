@@ -1,0 +1,42 @@
+// ============================================
+// MessageScreen — black background with green text
+// Matches Figma nodes 36:43, 36:48, 36:61
+// ============================================
+
+.message-screen {
+  position: absolute;
+  inset: 0;
+  background-color: $color-black;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity $fade-in-duration $fade-in-easing;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+
+  &__text {
+    color: $color-primary;
+    font-family: $font-family;
+    font-size: $font-size-message;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  // Empty line spacer between message parts (like in Figma 36:48)
+  &__spacer {
+    height: 1em;
+  }
+}

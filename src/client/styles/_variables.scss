@@ -1,0 +1,31 @@
+// ============================================
+// D-Congress 2026 — Design Tokens from Figma
+// ============================================
+
+// Colors
+$color-primary: #d5fe00; // Panagora Green
+$color-black: #000000;
+
+// Typography
+$font-family: 'Inter Tight', sans-serif;
+$font-weight-regular: 400;
+$font-size-idle-prompt: 34.5px;
+$font-size-message: 55.5px;
+$font-size-dev-button: 22.5px;
+
+// Layout — fixed 1920×1080 canvas (congress display)
+$canvas-width: 1920px;
+$canvas-height: 1080px;
+$safe-area-size: 1080px;
+
+// Safe area circle
+$safe-area-border-width: 1px;
+$safe-area-border-style: dashed;
+$safe-area-border-color: rgba(255, 255, 255, 0.15);
+
+// Dev button
+$dev-button-size: 164px;
+
+// Animations
+$fade-in-duration: 0.6s;
+$fade-in-easing: ease-out;

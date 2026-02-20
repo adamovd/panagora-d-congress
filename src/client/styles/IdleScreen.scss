@@ -1,0 +1,40 @@
+// ============================================
+// IdleScreen — green background with logo
+// Matches Figma nodes 36:3 and 36:51
+// ============================================
+
+.idle-screen {
+  position: absolute;
+  inset: 0;
+  background-color: $color-primary;
+
+  // Override the safe area circle border for the green screen
+  .safe-area__circle {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__logo {
+    width: 323px;
+    height: auto;
+    // Logo positioned slightly above center (matching Figma insets)
+    margin-top: -120px;
+  }
+
+  &__prompt {
+    color: $color-black;
+    font-family: $font-family;
+    font-size: $font-size-idle-prompt;
+    font-weight: $font-weight-regular;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+  }
+}

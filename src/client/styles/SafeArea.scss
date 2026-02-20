@@ -1,0 +1,29 @@
+// ============================================
+// SafeArea — centered 1080×1080 dashed circle
+// ============================================
+
+.safe-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $safe-area-size;
+  height: $safe-area-size;
+
+  &__circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: $safe-area-border-width $safe-area-border-style $safe-area-border-color;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

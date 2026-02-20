@@ -1,0 +1,31 @@
+// ============================================
+// Global Styles
+// ============================================
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: $canvas-width;
+  height: $canvas-height;
+  overflow: hidden;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+  user-select: none;
+}
+
+// Hide scrollbars everywhere
+::-webkit-scrollbar {
+  display: none;
+}
