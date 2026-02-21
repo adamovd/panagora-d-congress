@@ -24,10 +24,9 @@ app.use(express.json());
 app.use('/api/messages', messagesRouter(db));
 app.use('/api/videos', videosRouter());
 
-// Serve video files from public/videos
-const videosPath = IS_PROD
-  ? path.resolve(__dirname, '../../public/videos')
-  : path.resolve(__dirname, '../../public/videos');
+// Serve video files — path is overridden by the Electron main process via
+// VIDEOS_DIR so the packaged app can find videos outside the asar archive.
+const videosPath = process.env.VIDEOS_DIR ?? path.resolve(__dirname, '../../public/videos');
 app.use('/videos', express.static(videosPath));
 
 // In production, serve the built React app

@@ -6,7 +6,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const VIDEOS_DIR = path.resolve(__dirname, '../../../public/videos');
+// When running inside Electron the main process sets VIDEOS_DIR to the
+// resources/videos folder bundled alongside the executable.
+const VIDEOS_DIR = process.env.VIDEOS_DIR ?? path.resolve(__dirname, '../../../public/videos');
 
 function getVideoFiles(subdir: string): string[] {
   const dir = path.join(VIDEOS_DIR, subdir);

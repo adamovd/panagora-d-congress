@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:client": "vite",
@@ -10,7 +11,57 @@
     "build": "vite build && tsc -p tsconfig.server.json",
     "start": "node dist/server/index.js",
     "seed": "tsx src/server/db/seed.ts",
-    "db:reset": "rm -f data/congress.db && npm run seed"
+    "db:reset": "rm -f data/congress.db && npm run seed",
+    "electron:dev": "npm run build && electron .",
+    "electron:build": "npm run build && npm run seed && mkdir -p public/videos/transitions public/videos/idle && electron-builder",
+    "electron:build:win": "npm run build && npm run seed && mkdir -p public/videos/transitions public/videos/idle && electron-builder --win",
+    "electron:build:mac": "npm run build && npm run seed && mkdir -p public/videos/transitions public/videos/idle && electron-builder --mac",
+    "electron:build:linux": "npm run build && npm run seed && mkdir -p public/videos/transitions public/videos/idle && electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.panagora.dcongress2026",
+    "productName": "D-Congress 2026",
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "data",
+        "to": "data",
+        "filter": ["*.db", "*.json"]
+      },
+      {
+        "from": "public/videos",
+        "to": "videos"
+      }
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ]
+    },
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["x64", "arm64"] }
+      ]
+    },
+    "linux": {
+      "target": [
+        { "target": "AppImage", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerLanguages": ["en_US"]
+    }
   },
   "dependencies": {
     "@fontsource/inter-tight": "^5.1.1",
@@ -29,6 +80,8 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "concurrently": "^9.1.0",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
     "sass": "^1.82.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",

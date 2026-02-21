@@ -6,7 +6,10 @@ import { createSchema } from './schema.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DB_PATH = path.resolve(__dirname, '../../../data/congress.db');
+// When running inside Electron the main process sets DB_PATH to a writable
+// location (app.getPath('userData')).  Fall back to the project-relative path
+// for the standard Node.js dev/production workflow.
+const DB_PATH = process.env.DB_PATH ?? path.resolve(__dirname, '../../../data/congress.db');
 
 export function initDatabase(): Database.Database {
   const db = new Database(DB_PATH);
